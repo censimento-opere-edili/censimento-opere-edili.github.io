@@ -1,0 +1,55 @@
+body{
+    background: linear-gradient(to bottom right, #5b1f67, rgb(53, 52, 52));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px;  
+}
+#box1{
+        height: 75px;
+        width: 2000px;
+        background: rgb(84, 84, 84);
+        position: fixed;
+        
+    }
+#box3{
+    height: 250px;
+    width: 250px;
+    background: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    
+}
+.bottoni{
+    width: 500px;
+    height: 50px;
+    background: white;
+    position: fixed;
+    bottom: -1%;
+    left: 50%;
+    translate: -50% -50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#box2{
+        height: 75px;
+        width: 2000px;
+        background: rgb(84, 84, 84);
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+}
+#box4{
+    height: 50px;
+    width: 500px;
+    background: aquamarine;
+    top: 5px;
+    left: 5px;
+    position: fixed;
+}
