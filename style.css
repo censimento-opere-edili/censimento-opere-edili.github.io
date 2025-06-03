@@ -8,8 +8,14 @@ body{
     position: fixed;
     top: 0%;
     width: 100%;
-    height: 50px;
+    height: 65px;
     background-color: rgb(54, 54, 54);
+    margin: 0px;
+}
+.top a{
+    display: block;
+    margin: 15px;
+    width: 350px;
 }
 .navbar{
     height: 100px;
@@ -59,11 +65,18 @@ body{
     background-color: rgb(63, 21, 78);
 }
 .logo{
-    background-color: aqua;
-    width: 300px;
-    height: 300px;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     position: fixed;
+    margin: 0;
+    padding: 0%;
+    justify-content: center;
+    align-items: center;
+}
+.titolo{
+    color: white;
+    font-size: 50px;
+    padding-top: 75px;
+    padding-left: 30px;
 }
