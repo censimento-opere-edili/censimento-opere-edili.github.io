@@ -89,12 +89,11 @@ body{
     font-size: 25px;
     text-decoration: none;
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .griglia{
     margin-bottom: 200px;
     margin-top: 75px;
-    margin-inline: 25px;
     display: flex;
     align-content: center;
     align-items: center;
