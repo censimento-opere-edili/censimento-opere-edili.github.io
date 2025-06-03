@@ -87,9 +87,9 @@ body{
 }
 .elenco a{
     font-size: 25px;
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
-    justify-content: space-around;
+    line-height: 3;
 }
 .griglia{
     margin-bottom: 200px;
@@ -118,7 +118,6 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    
 }
 .fullimg span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -132,4 +131,20 @@ body{
 #caption {
     font-size: 25px;
     color: white;
+}
+.elenco2{
+    padding-top: 20px;
+    padding-left: 65px;
+    color: white;
+}
+.elenco2 ul{
+    list-style-type: none;
+}
+.elenco2 li{
+    font-size: 25px;
+    line-height: 3;
+}
+.elenco2 a{
+    position: relative;
+    padding-right: 20px;
 }
