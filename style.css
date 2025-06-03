@@ -76,7 +76,33 @@ body{
 }
 .titolo{
     color: white;
-    font-size: 50px;
+    font-size: 45px;
     padding-top: 75px;
     padding-left: 30px;
+}
+.elenco{
+    padding-top: 20px;
+    padding-left: 65px;
+    color: white;
+}
+.elenco a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
+}
+.griglia{
+    margin-bottom: 200px;
+    margin-top: 75px;
+    margin-inline: 25px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.griglia .foto{
+    height: 125px;
+    width: 125px;
 }
