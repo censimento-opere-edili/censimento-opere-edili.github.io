@@ -141,10 +141,10 @@ body{
     list-style-type: none;
 }
 .elenco2 li{
-    font-size: 25px;
+    font-size: 20px;
     line-height: 3;
 }
 .elenco2 a{
     position: relative;
-    padding-right: 20px;
+    padding-right: 5px;
 }
