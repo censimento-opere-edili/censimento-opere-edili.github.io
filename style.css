@@ -134,16 +134,17 @@ body{
 }
 .elenco2{
     padding-top: 20px;
-    padding-left: 65px;
+    padding-left: 30px;
     color: white;
 }
 .elenco2 ul{
     list-style-type: none;
 }
 .elenco2 li{
-    font-size: 20px;
+    font-size: 15px;
     line-height: 3;
 }
 .elenco2 a{
     position: relative;
+    padding-right: 10px;
 }
