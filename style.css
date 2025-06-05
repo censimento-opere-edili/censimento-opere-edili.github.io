@@ -13,7 +13,7 @@ body{
     position: fixed;
     top: 0%;
     width: 100%;
-    height: 5%;
+    height: 50px;
     background-color: rgb(54, 54, 54);
     margin: 0px;
     align-content: space-between;
@@ -24,7 +24,7 @@ body{
     padding-left: 2%;
 }
 .navbar{
-    height: 10%;
+    height: 125px;
     width: 100%;
     background-color: rgb(54, 54, 54);
     position: fixed;
@@ -38,14 +38,14 @@ body{
 .navbar ul{
     list-style-type: none;
     padding-inline-start: 0%;
-    width: 500px;
+    width: 60%;
     height: 60%;
     overflow: hidden;
     display:flex;
     justify-content: center;
 }
 .navbar li{
-    font-size: 30px;
+    font-size: 150%;
     float: left;
     background-color: rgb(70, 70, 70);
     height: 100%;
