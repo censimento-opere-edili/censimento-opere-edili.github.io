@@ -21,7 +21,7 @@ body{
     padding-left: 2%;
 }
 .navbar{
-    height: 125px;
+    height: clamp(60px, 10%, 125px);
     width: 100%;
     background-color: rgb(54, 54, 54);
     position: fixed;
@@ -35,18 +35,18 @@ body{
 .navbar ul{
     list-style-type: none;
     padding-inline-start: 0%;
-    width: 60%;
+    width: clamp(350px, 60%, 900px);
     height: 60%;
     overflow: hidden;
     display:flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .navbar li{
-    font-size: 150%;
+    font-size: 130%;
     float: left;
     background-color: rgb(70, 70, 70);
     height: 100%;
-    width: 100%;
+    width: clamp(100px, 25%, 400px);
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -131,7 +131,7 @@ body{
     gap: 10px;
 }
 .fullimg img{
-    height: 60%;
+    width: clamp(400px, 35%, 1000px);
 }
 .fullimg span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
