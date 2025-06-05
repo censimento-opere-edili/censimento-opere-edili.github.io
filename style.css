@@ -133,6 +133,9 @@ body{
     flex-direction: column;
     gap: 10px;
 }
+.fullimg img{
+    height: 75%;
+}
 .fullimg span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
@@ -142,6 +145,7 @@ body{
     color: white;
     cursor:pointer;
 }
+
 #caption {
     font-size: 150%;
     color: white;
