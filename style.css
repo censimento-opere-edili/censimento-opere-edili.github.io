@@ -134,7 +134,7 @@ body{
     gap: 10px;
 }
 .fullimg img{
-    height: 75%;
+    height: 75vh;
 }
 .fullimg span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
