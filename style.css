@@ -21,7 +21,7 @@ body{
     padding-left: 2%;
 }
 .navbar{
-    height: clamp(60px, 10%, 125px);
+    height: clamp(60px, 10%, 200px);
     width: 100%;
     background-color: rgb(54, 54, 54);
     position: fixed;
@@ -35,18 +35,18 @@ body{
 .navbar ul{
     list-style-type: none;
     padding-inline-start: 0%;
-    width: clamp(350px, 60%, 900px);
+    width: clamp(350px, 60%, 1500px);
     height: 60%;
     overflow: hidden;
     display:flex;
     justify-content: space-evenly;
 }
 .navbar li{
-    font-size: 130%;
+    font-size: clamp(20px, 150%, 200%);
     float: left;
     background-color: rgb(70, 70, 70);
     height: 100%;
-    width: clamp(100px, 25%, 400px);
+    width: clamp(100px, 25%, 500px);
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -163,4 +163,12 @@ body{
 .elenco2 a{
     position: relative;
     padding-right: 10px;
+}
+.griglia2{
+    margin-top: 70px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
