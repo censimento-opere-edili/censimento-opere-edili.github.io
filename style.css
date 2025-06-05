@@ -1,13 +1,10 @@
-@font-face {
-    font-family: 'Mincho';
-    src: url(MSMINCHO.TTF);
-}
+
 body{
     background: linear-gradient(to bottom right, #5b1f67, rgb(53, 52, 52));
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0px; 
-    font-family: 'Mincho'; 
+    font-family: 'Times New Roman', Times, serif; 
 }
 .top{
     position: fixed;
