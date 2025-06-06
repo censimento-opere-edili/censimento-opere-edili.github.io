@@ -35,7 +35,7 @@ body{
 .navbar ul{
     list-style-type: none;
     padding-inline-start: 0%;
-    width: clamp(350px, 80%, 1500px);
+    width: clamp(350px, 90%, 1000px);
     height: 60%;
     overflow: hidden;
     display:flex;
