@@ -35,14 +35,14 @@ body{
 .navbar ul{
     list-style-type: none;
     padding-inline-start: 0%;
-    width: clamp(350px, 60%, 1500px);
+    width: clamp(350px, 80%, 1500px);
     height: 60%;
     overflow: hidden;
     display:flex;
     justify-content: space-evenly;
 }
 .navbar li{
-    font-size: clamp(20px, 150%, 200%);
+    font-size: clamp(20px, 5vw, 30px);
     float: left;
     background-color: rgb(70, 70, 70);
     height: 100%;
@@ -87,17 +87,17 @@ body{
 }
 .titolo{
     color: white;
-    font-size: 350%;
-    padding-top: 60px;
+    font-size: clamp(50px, 5vw, 90px);
+    padding-top: clamp(60px, 7%, 75px);
     padding-left: 5%;
 }
 .elenco{
     padding-top: 20px;
-    padding-left: 65px;
+    padding-left: 7%;
     color: white;
 }
 .elenco a{
-    font-size: 200%;
+    font-size: clamp(35px, 5vw, 50px);
     text-decoration: underline;
     color: white;
     line-height: 3;
@@ -131,7 +131,7 @@ body{
     gap: 10px;
 }
 .fullimg img{
-    width: clamp(400px, 35%, 1000px);
+    width: clamp(350px, 80vw, 80vh);
 }
 .fullimg span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -142,27 +142,28 @@ body{
     color: white;
     cursor:pointer;
 }
-
 #caption {
-    font-size: 150%;
+    margin-top: 10px;
+    margin-inline: 10%;
+    font-size: clamp(25px, 3vw, 45px);
     color: white;
 }
 .elenco2{
     padding-top: 20px;
-    padding-left: 30px;
+    padding-left: 6%;
     color: white;
 }
 .elenco2 ul{
     list-style-type: none;
-    
 }
-.elenco2 li{
-    font-size: 120%;
-    line-height: 3;
+.elenco2 p{
+    font-size: clamp(18px, 3vw, 30px);
+    line-height: 5;
+    display: inline;
 }
-.elenco2 a{
-    position: relative;
-    padding-right: 10px;
+.elenco2 img{
+    width: clamp(35px, 5vw, 80px);
+    padding-right: 2%;
 }
 .griglia2{
     margin-top: 70px;
