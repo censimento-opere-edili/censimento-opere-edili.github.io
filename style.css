@@ -231,10 +231,10 @@ body{
 .fullimg2 button{
     background-color: transparent;
     position: absolute;
-    top: 50%;
+    top: 17%;
     transform: translateY(-50%);
     border: none;
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
     outline: none;
     color: white; 
@@ -244,7 +244,7 @@ body{
 .fullimg button{
     background-color: transparent;
     position: absolute;
-    top: 50%;
+    top: 17%;
     transform: translateY(-50%);
     border: none;
     font-size: 30px;
