@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <div class="navbar">
+        <ul>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="negozio.html">Negozio</a></li>         
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </div>
+    <div class="top">
+         <a href="index.html"><img src="bannerA1-cropped.svg" style="height:30px"></a>
+    </div> 
+    <div class="titolo">Serie A-200</div>
+    <div class="fullimg" id="fullbox">
+        <img id="full" src="fotografie2/101.jpg">
+        <span onclick="closefull()">X</span>
+        <div id="caption"></div>
+    </div>
+    <div class="griglia">
+            <div class="foto"><img src="fotografie2/101.jpg" style="width: 200px; height: 200px;" alt="#101 Faro alla Rupe del Canto" onclick="openfull(this.src);dida(this.alt)"></div>
+            <div class="foto"><img src="fotografie2/102.jpg" style="width: 200px; height: 200px;" alt="#102 Terrazza a Idraulicità Sospesa" onclick="openfull(this.src);dida(this.alt)"></div>
+    </div>
+    <script>
+    var fullbox = document.getElementById("fullbox");
+    var full = document.getElementById("full");
+    var captionText = document.getElementById("caption");
+    function openfull(pic){
+        fullbox.style.display = "flex";
+        full.src = pic;}
+    function dida(yea){
+        captionText.innerHTML= yea;
+    }
+    function closefull(){
+        fullbox.style.display = "none";
+    }
+       
+</script>
+</body> 
+</html>
