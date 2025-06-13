@@ -19,29 +19,76 @@
     </div> 
     <div class="titolo">Serie A-200</div>
     <div class="fullimg" id="fullbox">
-        <span onclick="closefull()">X</span>
-        <img id="full" src="fotografie2/101.jpg">
-        
+      <button class="prev" id="prevSlide">&#10094;
+        </button>
+        <button class="next" id="nextSlide">&#10095;
+        </button>
+        <span class="x">X</span>
+        <img id="full" src="">
         <div id="caption"></div>
     </div>
     <div class="griglia">
-            <div class="foto"><img src="fotografie2/101.webp" alt="#101 Faro alla Rupe del Canto" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie2/102.webp" alt="#102 Terrazza a Idraulicità Sospesa" onclick="openfull(this.src);dida(this.alt)"></div>
+            <div class="foto"><img src="fotografie2/101.webp" alt="#101 Faro alla Rupe del Canto"></div>
+            <div class="foto"><img src="fotografie2/102.webp" alt="#102 Terrazza a Idraulicità Sospesa"></div>
     </div>
     <script>
-    var fullbox = document.getElementById("fullbox");
-    var full = document.getElementById("full");
-    var captionText = document.getElementById("caption");
-    function openfull(pic){
-        fullbox.style.display = "flex";
-        full.src = pic;}
-    function dida(yea){
-        captionText.innerHTML= yea;
-    }
-    function closefull(){
-        fullbox.style.display = "none";
-    }
+        const gallery = document.querySelectorAll(".griglia .foto"),
+previewBox = document.querySelector(".fullimg"),
+previewImg = previewBox.querySelector("img"),
+closeIcon = document.querySelector("span");
+captionText = document.getElementById("caption");
+
+window.onload = ()=>{
+    for (let i = 0; i < gallery.length; i++) {
+        let newIndex = i;
+        gallery[i].onclick = ()=>{
+            console.log(i);    
+            function preview(){
+                let selectedImgUrl = gallery[newIndex].querySelector("img").src;
+                let selectedImgAlt = gallery[newIndex].querySelector("img").alt;
+                console.log(selectedImgUrl);
+                previewImg.src = selectedImgUrl;
+                captionText.textContent = selectedImgAlt;
+            }
+
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+                if(newIndex ==0){
+                    prevBtn.style.display="none";
+                }
+                if (newIndex >= gallery.lenght +1){
+                    nextBtn.style.display="none";
+                }
+            prevBtn.onclick = ()=>{
+                newIndex--;
+                if(newIndex == 0){
+                    preview();
+                    prevBtn.style.display = "none";
+                }else{
+                preview();
+                nextBtn.style.display="block";
+            }
+            }
+            nextBtn.onclick = ()=>{
+                newIndex++;
+                if(newIndex >= gallery.lenght +1){
+                    preview();
+                    nextBtn.style.display="none";
+                }else{
+                    preview();
+                    prevBtn.style.display="block";
+                }
+            }
+            preview();
+            previewBox.classList.add("show");
+
+            closeIcon.onclick = ()=>{
+                previewBox.classList.remove("show");
+            }
+        }
        
-</script>
+    }
+}
+    </script>
 </body> 
 </html>

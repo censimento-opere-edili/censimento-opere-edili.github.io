@@ -19,127 +19,179 @@
     </div> 
     <div class="titolo">Serie A-100</div>
     <div class="fullimg" id="fullbox">
-        <span onclick="closefull()">X</span>
-        <img id="full" src="fotografie/1.webp">
+        <button class="prev" id="prevSlide">&#10094;
+        </button>
+        <button class="next" id="nextSlide">&#10095;
+        </button>
+        <span class="x">X</span>
+        <img id="full" src="">
         <div id="caption"></div>
     </div>
-    
     <div class="griglia">
-            <div class="foto"><img src="fotografie/1.webp"  alt="#1 Castello d'Avorio" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/2.webp"  alt="#2 Via del Cristo" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/3.webp"  alt="#3 Hotel Paradiso" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/4.webp"  alt="#4 Posto di Blocco Sud" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/5.webp"  alt="#5 Uffici dell'Anima" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/6.webp"  alt="#6 Centro Socialprogressista" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/7.webp"  alt="#7 Snack Bar" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/8.webp"  alt="#8 Maison 'Le Bobby'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/9.webp"  alt="#9 Tribunale della Forestale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/10.webp"  alt="#10 Centrale Metaelettrica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/11.webp"  alt="#11 Fabbrica di Bassi" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/12.webp"  alt="#12 Palazzo della Codardia Giustificata" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/13.webp"  alt="#13 Centro Distopie Polifunzionali" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/14.webp"  alt="#14 Monumento al Memoriale 'Behrens'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/15.webp"  alt="#15 Associazione per la Gestione delle Vergogne Pubbliche" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/16.webp"  alt="#16 Base Siluristica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/17.webp"  alt="#17 Parco Acquatico 'Peter Pan'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/18.webp"  alt="#18 Discoteca 'Sternspitze'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/19.webp"  alt="#19 Discobolo 183mm"onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/20.webp"  alt="#20 Istituto Comprensivo 'G.Scienza'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/21.webp"  alt="#21 Associazione Lucchetti Provvisori" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/22.webp"  alt="#22 Tepidario Formale Autogenerante" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/23.webp"  alt="#23 Idroscalo 'Franco'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/24.webp"  alt="#24 Portico d'Ingresso del Padiglione Mango" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/25.webp"  alt="#25 Tipografia Cardinale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/26.webp"  alt="#26 Torre di Compostaggio" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/27.webp"  alt="#27 Modello di Presentazione di Casa Dinamica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/28.webp"  alt="#28 Ingresso al Tunnel del Credo" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/29.webp"  alt="#29 Fabbrica sull'Albero" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/30.webp"  alt="#30 Posto di Blocco Ovest" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/31.webp"  alt="#31 Ospedale Serale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/32.webp"  alt="#32 Cremeria 'BEGINTFY'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/33.webp"  alt="#33 Nuova Cisterna del Sale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/34.webp"  alt="#34 Videoteca Estremista" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/35.webp"  alt="#35 Colorificio 'Evergreen'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/36.webp"  alt="#36 -indefinito- 'Abuso Mentale'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/37.webp"  alt="#37 Casamatta 8" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/38.webp"  alt="#38 Dipartimento del Legno" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/39.webp"  alt="#39 Frigorifici a Condensazione" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/40.webp"  alt="#40 Posto di Blocco Est" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/41.webp"  alt="#41 Posto di Blocco Nord 'Re de Bastione'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/42.webp"  alt="#42 Centro di Controllo Integrali Sfogliate" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/43.webp"  alt="#43 Ministero dell'Automa Conteggiato" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/44.webp"  alt="#44 Piccolo Teatro dei Vermi" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/45.webp"  alt="#45 Portico del Parco 'Bolle di Detergente'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/46.webp"  alt="#46 Hotel Stanziale Monomaterico" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/47.webp"  alt="#47 Studio Medico 'Pim-Pum-Pache'"onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/48.webp"  alt="#48 Fermata dell'Aereo HB2"onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/49.webp"  alt="#49 Molla di Stabilizzazione Meterologica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/50.webp"  alt="#50 Inceneritore Medio-ponderato" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/51.webp"  alt="#51 Camino del Primordiale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/52.webp"  alt="#52 Stabile di Quarantena Intermittente" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/53.webp"  alt="#53 Teramercato di Classe B"onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/54.webp"  alt="#54 Centro di Ricerca V-Ups" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/55.webp"  alt="#55 Complesso Musivo" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/56.webp"  alt="#56 Colombificio Capogrossi" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/57.webp"  alt="#57 Sede Operativa C.O.E."onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/58.webp"  alt="#58 Monastero degli ECDL" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/59.webp"  alt="#59 Sala Prove Centripete" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/60.webp"  alt="#60 Zecca Casuale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/61.webp"  alt="#61 Fattoria Verticalizzante" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/62.webp"  alt="#62 Sistema di Aule Viniliche" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/63.webp"  alt="#63 Monostazione Ecologica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/64.webp"  alt="#64 Ascensore Fluido" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/65.webp"  alt="#65 Concessionaria Immobiliare" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/66.webp"  alt="#66 Quartiere Civico Biclasse" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/67.webp"  alt="#67 Piattaforma di Accelerazione" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/68.webp"  alt="#68 Gazebo V.D" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/69.webp"  alt="#69 Autovelox a Led" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/70.webp"  alt="#70 Falsariato Astrale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/71.webp"  alt="#71 Società Eliscafisti Uniti" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/72.webp"  alt="#72 Deposito Camme" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/73.webp"  alt="#73 Consultorio 'Intellighènzia'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/74.webp"  alt="#74 Turbinio a Clientelismo" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/75.webp"  alt="#75 Bistro alle Fonti Enciclopediche" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/76.webp"  alt="#76 Base Atavica ad Aggancio Magnetico" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/77.webp"  alt="#77 Pelletteria Detentiva 'Van der Waals'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/78.webp"  alt="#78 Rete d'Abitazione di Tipo F" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/79.webp"  alt="#79 Estensione a Zona Termobarica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/80.webp"  alt="#80 Colonia Roulante" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/81.webp"  alt="#81 Magazzino Obeliscato 'Vacheroba'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/82.webp"  alt="#82 Congresso per Fitte Apparenti" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/83.webp"  alt="#83 Prototipo di Stoccaggio Linoleum delle 2e10" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/84.webp"  alt="#84 Sede Ospedaliera C.O.E." onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/85.webp"  alt="#85 Supermercato Flebile" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/86.webp"  alt="#86 Brassificio Ottoniano" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/87.webp"  alt="#87 Appendice Proiettrice di Sestiere" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/88.webp"  alt="#88 Plinti di Squilibrio Esalante" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/89.webp"  alt="#89 Trimensa 'Colpraena'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/90.webp"  alt="#90 Impianto di Produzione Camber Positivi" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/91.webp"  alt="#91 Uscita del Bigodromo Innevato" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/92.webp"  alt="#92 -indefinito- 'Zona Archeologica ACC'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/93.webp"  alt="#93 Ristopub 'Il Corvo Spaesato'" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/94.webp"  alt="#94 Stazione di Solitudine Perimetrale" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/95.webp"  alt="#95 Ambasciata Neuroattiva" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/96.webp"  alt="#96 Colombaia Domotica" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/97.webp"  alt="#97 Cripte Governative" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/98.webp"  alt="#98 Centro di Smistamento Autoesclusioni" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/99.webp"  alt="#99 Passeggiata Sovraurbana" onclick="openfull(this.src);dida(this.alt)"></div>
-            <div class="foto"><img src="fotografie/100.webp"  alt="#100 Drogheria del Ghiaccio" onclick="openfull(this.src);dida(this.alt)"></div>
+            <div class="foto"><span><img src="fotografie/1.webp"  alt="#1 Castello d'Avorio"></span></div>
+            <div class="foto"><img src="fotografie/2.webp"  alt="#2 Via del Cristo"></div>
+            <div class="foto"><img src="fotografie/3.webp"  alt="#3 Hotel Paradiso"></div>
+            <div class="foto"><img src="fotografie/4.webp"  alt="#4 Posto di Blocco Sud"></div>
+            <div class="foto"><img src="fotografie/5.webp"  alt="#5 Uffici dell'Anima"></div>
+            <div class="foto"><img src="fotografie/6.webp"  alt="#6 Centro Socialprogressista"></div>
+            <div class="foto"><img src="fotografie/7.webp"  alt="#7 Snack Bar"></div>
+            <div class="foto"><img src="fotografie/8.webp"  alt="#8 Maison 'Le Bobby'"></div>
+            <div class="foto"><img src="fotografie/9.webp"  alt="#9 Tribunale della Forestale"></div>
+            <div class="foto"><img src="fotografie/10.webp"  alt="#10 Centrale Metaelettrica"></div>
+            <div class="foto"><img src="fotografie/11.webp"  alt="#11 Fabbrica di Bassi"></div>
+            <div class="foto"><img src="fotografie/12.webp"  alt="#12 Palazzo della Codardia Giustificata"></div>
+            <div class="foto"><img src="fotografie/13.webp"  alt="#13 Centro Distopie Polifunzionali"></div>
+            <div class="foto"><img src="fotografie/14.webp"  alt="#14 Monumento al Memoriale 'Behrens'"></div>
+            <div class="foto"><img src="fotografie/15.webp"  alt="#15 Associazione per la Gestione delle Vergogne Pubbliche"></div>
+            <div class="foto"><img src="fotografie/16.webp"  alt="#16 Base Siluristica"></div>
+            <div class="foto"><img src="fotografie/17.webp"  alt="#17 Parco Acquatico 'Peter Pan'"></div>
+            <div class="foto"><img src="fotografie/18.webp"  alt="#18 Discoteca 'Sternspitze'"></div>
+            <div class="foto"><img src="fotografie/19.webp"  alt="#19 Discobolo 183mm"></div>
+            <div class="foto"><img src="fotografie/20.webp"  alt="#20 Istituto Comprensivo 'G.Scienza'"></div>
+            <div class="foto"><img src="fotografie/21.webp"  alt="#21 Associazione Lucchetti Provvisori"></div>
+            <div class="foto"><img src="fotografie/22.webp"  alt="#22 Tepidario Formale Autogenerante"></div>
+            <div class="foto"><img src="fotografie/23.webp"  alt="#23 Idroscalo 'Franco'"></div>
+            <div class="foto"><img src="fotografie/24.webp"  alt="#24 Portico d'Ingresso del Padiglione Mango"></div>
+            <div class="foto"><img src="fotografie/25.webp"  alt="#25 Tipografia Cardinale"></div>
+            <div class="foto"><img src="fotografie/26.webp"  alt="#26 Torre di Compostaggio"></div>
+            <div class="foto"><img src="fotografie/27.webp"  alt="#27 Modello di Presentazione di Casa Dinamica"></div>
+            <div class="foto"><img src="fotografie/28.webp"  alt="#28 Ingresso al Tunnel del Credo"></div>
+            <div class="foto"><img src="fotografie/29.webp"  alt="#29 Fabbrica sull'Albero"></div>
+            <div class="foto"><img src="fotografie/30.webp"  alt="#30 Posto di Blocco Ovest"></div>
+            <div class="foto"><img src="fotografie/31.webp"  alt="#31 Ospedale Serale"></div>
+            <div class="foto"><img src="fotografie/32.webp"  alt="#32 Cremeria 'BEGINTFY'"></div>
+            <div class="foto"><img src="fotografie/33.webp"  alt="#33 Nuova Cisterna del Sale"></div>
+            <div class="foto"><img src="fotografie/34.webp"  alt="#34 Videoteca Estremista"></div>
+            <div class="foto"><img src="fotografie/35.webp"  alt="#35 Colorificio 'Evergreen'"></div>
+            <div class="foto"><img src="fotografie/36.webp"  alt="#36 -indefinito- 'Abuso Mentale'"></div>
+            <div class="foto"><img src="fotografie/37.webp"  alt="#37 Casamatta 8"></div>
+            <div class="foto"><img src="fotografie/38.webp"  alt="#38 Dipartimento del Legno"></div>
+            <div class="foto"><img src="fotografie/39.webp"  alt="#39 Frigorifici a Condensazione"></div>
+            <div class="foto"><img src="fotografie/40.webp"  alt="#40 Posto di Blocco Est"></div>
+            <div class="foto"><img src="fotografie/41.webp"  alt="#41 Posto di Blocco Nord 'Re de Bastione'"></div>
+            <div class="foto"><img src="fotografie/42.webp"  alt="#42 Centro di Controllo Integrali Sfogliate"></div>
+            <div class="foto"><img src="fotografie/43.webp"  alt="#43 Ministero dell'Automa Conteggiato"></div>
+            <div class="foto"><img src="fotografie/44.webp"  alt="#44 Piccolo Teatro dei Vermi"></div>
+            <div class="foto"><img src="fotografie/45.webp"  alt="#45 Portico del Parco 'Bolle di Detergente'"></div>
+            <div class="foto"><img src="fotografie/46.webp"  alt="#46 Hotel Stanziale Monomaterico"></div>
+            <div class="foto"><img src="fotografie/47.webp"  alt="#47 Studio Medico 'Pim-Pum-Pache'"></div>
+            <div class="foto"><img src="fotografie/48.webp"  alt="#48 Fermata dell'Aereo HB2"></div>
+            <div class="foto"><img src="fotografie/49.webp"  alt="#49 Molla di Stabilizzazione Meterologica"></div>
+            <div class="foto"><img src="fotografie/50.webp"  alt="#50 Inceneritore Medio-ponderato"></div>
+            <div class="foto"><img src="fotografie/51.webp"  alt="#51 Camino del Primordiale"></div>
+            <div class="foto"><img src="fotografie/52.webp"  alt="#52 Stabile di Quarantena Intermittente"></div>
+            <div class="foto"><img src="fotografie/53.webp"  alt="#53 Teramercato di Classe B"></div>
+            <div class="foto"><img src="fotografie/54.webp"  alt="#54 Centro di Ricerca V-Ups"></div>
+            <div class="foto"><img src="fotografie/55.webp"  alt="#55 Complesso Musivo"></div>
+            <div class="foto"><img src="fotografie/56.webp"  alt="#56 Colombificio Capogrossi"></div>
+            <div class="foto"><img src="fotografie/57.webp"  alt="#57 Sede Operativa C.O.E.""></div>
+            <div class="foto"><img src="fotografie/58.webp"  alt="#58 Monastero degli ECDL"></div>
+            <div class="foto"><img src="fotografie/59.webp"  alt="#59 Sala Prove Centripete"></div>
+            <div class="foto"><img src="fotografie/60.webp"  alt="#60 Zecca Casuale"></div>
+            <div class="foto"><img src="fotografie/61.webp"  alt="#61 Fattoria Verticalizzante"></div>
+            <div class="foto"><img src="fotografie/62.webp"  alt="#62 Sistema di Aule Viniliche"></div>
+            <div class="foto"><img src="fotografie/63.webp"  alt="#63 Monostazione Ecologica"></div>
+            <div class="foto"><img src="fotografie/64.webp"  alt="#64 Ascensore Fluido"></div>
+            <div class="foto"><img src="fotografie/65.webp"  alt="#65 Concessionaria Immobiliare"></div>
+            <div class="foto"><img src="fotografie/66.webp"  alt="#66 Quartiere Civico Biclasse"></div>
+            <div class="foto"><img src="fotografie/67.webp"  alt="#67 Piattaforma di Accelerazione"></div>
+            <div class="foto"><img src="fotografie/68.webp"  alt="#68 Gazebo V.D"></div>
+            <div class="foto"><img src="fotografie/69.webp"  alt="#69 Autovelox a Led"></div>
+            <div class="foto"><img src="fotografie/70.webp"  alt="#70 Falsariato Astrale"></div>
+            <div class="foto"><img src="fotografie/71.webp"  alt="#71 Società Eliscafisti Uniti"></div>
+            <div class="foto"><img src="fotografie/72.webp"  alt="#72 Deposito Camme"></div>
+            <div class="foto"><img src="fotografie/73.webp"  alt="#73 Consultorio 'Intellighènzia'"></div>
+            <div class="foto"><img src="fotografie/74.webp"  alt="#74 Turbinio a Clientelismo"></div>
+            <div class="foto"><img src="fotografie/75.webp"  alt="#75 Bistro alle Fonti Enciclopediche"></div>
+            <div class="foto"><img src="fotografie/76.webp"  alt="#76 Base Atavica ad Aggancio Magnetico"></div>
+            <div class="foto"><img src="fotografie/77.webp"  alt="#77 Pelletteria Detentiva 'Van der Waals'"></div>
+            <div class="foto"><img src="fotografie/78.webp"  alt="#78 Rete d'Abitazione di Tipo F"></div>
+            <div class="foto"><img src="fotografie/79.webp"  alt="#79 Estensione a Zona Termobarica"></div>
+            <div class="foto"><img src="fotografie/80.webp"  alt="#80 Colonia Roulante"></div>
+            <div class="foto"><img src="fotografie/81.webp"  alt="#81 Magazzino Obeliscato 'Vacheroba'"></div>
+            <div class="foto"><img src="fotografie/82.webp"  alt="#82 Congresso per Fitte Apparenti"></div>
+            <div class="foto"><img src="fotografie/83.webp"  alt="#83 Prototipo di Stoccaggio Linoleum delle 2e10"></div>
+            <div class="foto"><img src="fotografie/84.webp"  alt="#84 Sede Ospedaliera C.O.E."></div>
+            <div class="foto"><img src="fotografie/85.webp"  alt="#85 Supermercato Flebile"></div>
+            <div class="foto"><img src="fotografie/86.webp"  alt="#86 Brassificio Ottoniano"></div>
+            <div class="foto"><img src="fotografie/87.webp"  alt="#87 Appendice Proiettrice di Sestiere"></div>
+            <div class="foto"><img src="fotografie/88.webp"  alt="#88 Plinti di Squilibrio Esalante"></div>
+            <div class="foto"><img src="fotografie/89.webp"  alt="#89 Trimensa 'Colpraena'"></div>
+            <div class="foto"><img src="fotografie/90.webp"  alt="#90 Impianto di Produzione Camber Positivi"></div>
+            <div class="foto"><img src="fotografie/91.webp"  alt="#91 Uscita del Bigodromo Innevato"></div>
+            <div class="foto"><img src="fotografie/92.webp"  alt="#92 -indefinito- 'Zona Archeologica ACC'"></div>
+            <div class="foto"><img src="fotografie/93.webp"  alt="#93 Ristopub 'Il Corvo Spaesato'"></div>
+            <div class="foto"><img src="fotografie/94.webp"  alt="#94 Stazione di Solitudine Perimetrale"></div>
+            <div class="foto"><img src="fotografie/95.webp"  alt="#95 Ambasciata Neuroattiva"></div>
+            <div class="foto"><img src="fotografie/96.webp"  alt="#96 Colombaia Domotica"></div>
+            <div class="foto"><img src="fotografie/97.webp"  alt="#97 Cripte Governative"></div>
+            <div class="foto"><img src="fotografie/98.webp"  alt="#98 Centro di Smistamento Autoesclusioni"></div>
+            <div class="foto"><img src="fotografie/99.webp"  alt="#99 Passeggiata Sovraurbana"></div>
+            <div class="foto"><img src="fotografie/100.webp"  alt="#100 Drogheria del Ghiaccio"></div>
     </div>
 <script>
-    var fullbox = document.getElementById("fullbox");
-    var full = document.getElementById("full");
-    var captionText = document.getElementById("caption");
-    function openfull(pic){
-        fullbox.style.display = "flex";
-        full.src = pic;}
-    function dida(yea){
-        captionText.innerHTML= yea;
-    }
-    function closefull(){
-        fullbox.style.display = "none";
-    }
+      const gallery = document.querySelectorAll(".griglia .foto"),
+previewBox = document.querySelector(".fullimg"),
+previewImg = previewBox.querySelector("img"),
+closeIcon = document.querySelector("span");
+captionText = document.getElementById("caption")
+
+window.onload = ()=>{
+    for (let i = 0; i < gallery.length; i++) {
+        let newIndex = i;
+        let clickImgIndex;
+        gallery[i].onclick = ()=>{
+            clickImgIndex = newIndex;
+            console.log(i);    
+            function preview(){
+                let selectedImgUrl = gallery[newIndex].querySelector("img").src;
+                let selectedImgAlt = gallery[newIndex].querySelector("img").alt;
+                console.log(selectedImgUrl);
+                previewImg.src = selectedImgUrl;
+                captionText.textContent = selectedImgAlt;
+            }
+
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+                if(newIndex ==0){
+                    prevBtn.style.display="none";
+                }
+                if (newIndex >= gallery.length - 1){
+                    nextBtn.style.display="none";
+                }
+            prevBtn.onclick = ()=>{
+                newIndex--;
+                if(newIndex == 0){
+                    preview();
+                    prevBtn.style.display = "none";
+                }else{
+                preview();
+                nextBtn.style.display="block";
+            }
+            }
+            nextBtn.onclick = ()=>{
+                newIndex++;
+                if(newIndex >= gallery.length - 1){
+                    preview();
+                    nextBtn.style.display="none";
+                }else{
+                    preview();
+                    prevBtn.style.display="block";
+                }
+            }
+            preview();
+            previewBox.classList.add("show");
+
+            closeIcon.onclick = ()=>{
+                newIndex = clickImgIndex;
+                prevBtn.style.display = "block";
+                nextBtn.style.display = "block";
+                previewBox.classList.remove("show");
+            }
+        }
        
+    }
+}
 </script>
 </body> 
 </html>
