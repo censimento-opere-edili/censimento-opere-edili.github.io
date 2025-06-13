@@ -113,11 +113,11 @@ body{
     gap: 15px;
 }
 .foto{
-    width: clamp(50px, 30vw, 200px);
-    height: clamp(50px, 30vw, 200px);
+    width: clamp(50px, 27vw, 200px);
+    height: clamp(50px, 27vw, 200px);
 }
 .foto img{
-    width: clamp(50px, 30vw, 200px);
+    width: clamp(50px, 27vw, 200px);
 }
 
 .foto:hover{
