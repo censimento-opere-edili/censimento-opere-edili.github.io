@@ -103,15 +103,22 @@ body{
     line-height: 3;
 }
 .griglia{
-    margin-bottom: 200px;
+    margin-bottom: 150px;
     margin-top: 75px;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 15px;
 }
+.foto{
+    width: clamp(50px, 30vw, 200px);
+}
+.foto img{
+    width: clamp(50px, 30vw, 200px);
+}
+
 .foto:hover{
     cursor: zoom-in;
 }
