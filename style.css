@@ -157,7 +157,7 @@ body{
 }
 #caption {
     margin-top: 10px;
-    margin-inline: 10%;
+    margin-inline: 15%;
     font-size: clamp(25px, 3vw, 45px);
     color: white;
 }
@@ -229,19 +229,20 @@ body{
     cursor:pointer;
 }
 .fullimg2 button{
+    background-color: transparent;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    font-size: 30px;
+    font-size: 35px;
     cursor: pointer;
     outline: none;
     color: white; 
-    background-color: rgba(0,0,0,0.9);
     padding: 10px; 
     border-radius: 5px;
 }
 .fullimg button{
+    background-color: transparent;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -250,19 +251,18 @@ body{
     cursor: pointer;
     outline: none;
     color: white; 
-    background-color: rgba(0,0,0);
     padding: 10px; 
     border-radius: 5px;
 }
 .fullimg2 .prev{
-    left: 3vw;
+    left: 2vw;
 }
 .fullimg .prev{
-    left: 3vw;
+    left: 2vw;
 }
 .fullimg2 .next{
-    right: 3vw;
+    right: 2vw;
 }
 .fullimg .next{
-    right: 3vw;
+    right: 2vw;
 }
