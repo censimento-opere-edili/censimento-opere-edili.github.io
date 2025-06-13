@@ -114,6 +114,7 @@ body{
 }
 .foto{
     width: clamp(50px, 30vw, 200px);
+    height: clamp(50px, 30vw, 200px);
 }
 .foto img{
     width: clamp(50px, 30vw, 200px);
