@@ -17,11 +17,29 @@
          <a href="index.html"><img src="bannerA1-cropped.svg" style="height:30px"></a>
     </div> 
     <div class="titolo">Negozio</div>
-    <div class="griglia2">
-        <div class="fotoneg"><img src="fotoneg/neg1.webp" alt="" style="width: 200px">
-        </div>
-        <div class="fotoneg"><img src="fotoneg/neg2.webp" alt="" style="width: 200px">
-        </div>
+    <div class="fullimg2" id="fullbox">
+        <span onclick="closefull()">X</span>
+        <img id="full" src="fotoneg/neg1.webp">
+        <div id="caption"></div>
     </div>
+    <div class="griglia2">
+        <div class="fotoneg"><img src="fotoneg/neg1.webp" alt="Poster 'Serie A-100' (90x150, 70x100)" onclick="openfull(this.src);dida(this.alt)"></div>
+        <div class="fotoneg"><img src="fotoneg/neg2.webp" alt="Poster 'Base Siluristica (Notturno)' (70x100)" onclick="openfull(this.src);dida(this.alt)"></div>
+    </div>
+    <script>
+    var fullbox = document.getElementById("fullbox");
+    var full = document.getElementById("full");
+    var captionText = document.getElementById("caption");
+    function openfull(pic){
+        fullbox.style.display = "flex";
+        full.src = pic;}
+    function dida(yea){
+        captionText.innerHTML= yea;
+    }
+    function closefull(){
+        fullbox.style.display = "none";
+    }
+</script>
+</body> 
 </body>
 </html>
