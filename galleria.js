@@ -10,17 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let clickImgIndex = 0;
 
-    function preview(index) {
-        const selectedImg = gallery[index].querySelector("img");
-        const thumbSrc = selectedImg.src; // es. fotografie/thumb/1.webp
-        const largeSrc = thumbSrc.replace("/thumb/", "/large/"); // cambio path
+   function preview(index) {
+  const selectedImg = gallery[index].querySelector("img");
+  const thumbSrc = selectedImg.src;
+  const largeSrc = thumbSrc.replace("/thumb/", "/large/");
+  
+  previewImg.classList.add("loading");
+  captionText.classList.add("loading");
+  document.querySelector(".loader").style.display = "block";
 
-        previewImg.src = largeSrc; // uso immagine grande
-        captionText.textContent = selectedImg.alt;
+  previewImg.onload = () => {
+    previewImg.classList.remove("loading");
+    captionText.classList.remove("loading");
+    document.querySelector(".loader").style.display = "none";
+  };
 
-        prevBtn.style.display = (index === 0) ? "none" : "block";
-        nextBtn.style.display = (index >= gallery.length - 1) ? "none" : "block";
-    }
+  previewImg.src = largeSrc;
+  captionText.textContent = selectedImg.alt;
+
+  prevBtn.style.display = (index === 0) ? "none" : "block";
+  nextBtn.style.display = (index >= gallery.length - 1) ? "none" : "block";
+}
 
     gallery.forEach((item, i) => {
         item.onclick = () => {
