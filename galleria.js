@@ -1,69 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const gallery = document.querySelectorAll(".griglia .foto"),
-          previewBox = document.querySelector(".fullimg"),
-          previewImg = previewBox.querySelector("img"),
-          closeIcon = document.querySelector(".fullimg .x"),
-          captionText = document.getElementById("caption"),
-          prevBtn = document.querySelector(".prev"),
-          nextBtn = document.querySelector(".next"),
-          loader = document.querySelector(".loader");
+    const galleryItems = document.querySelectorAll(".griglia .foto");
+    const previewBox = document.querySelector(".fullimg");
+    const previewImg = previewBox.querySelector("img");
+    const closeBtn = previewBox.querySelector(".x");
+    const caption = document.getElementById("caption");
+    const prevBtn = previewBox.querySelector(".prev");
+    const nextBtn = previewBox.querySelector(".next");
+    const loader = previewBox.querySelector(".loader");
 
     let currentIndex = 0;
     let touchStartX = 0;
     let touchStartY = 0;
     let isMultiTouch = false;
-    const swipeThreshold = 100;
-    const verticalThreshold = 100;
 
-    function preview(index) {
+    const SWIPE_THRESHOLD = 100;
+    const VERTICAL_THRESHOLD = 100;
+
+    const showPreview = (index) => {
         currentIndex = index;
 
-        const selectedImg = gallery[index].querySelector("img");
-        const thumbSrc = selectedImg.src;
-        const largeSrc = thumbSrc.replace("/thumb/", "/large/");
-
-        previewImg.classList.add("loading");
-        captionText.classList.add("loading");
+        const img = galleryItems[index].querySelector("img");
+        const largeSrc = img.src.replace("/thumb/", "/large/");
+        
         loader.style.display = "block";
+        previewImg.classList.add("loading");
+        caption.classList.add("loading");
 
         previewImg.onload = () => {
             previewImg.classList.remove("loading");
-            captionText.classList.remove("loading");
+            caption.classList.remove("loading");
             loader.style.display = "none";
         };
 
         previewImg.src = largeSrc;
-        captionText.textContent = selectedImg.alt || "Immagine";
+        caption.textContent = img.alt || "Immagine";
+
         previewBox.classList.add("show");
-    }
+        document.body.classList.add("noscroll");
+    };
 
-    gallery.forEach((img, index) => {
-        img.addEventListener("click", () => {
-            preview(index);
-        });
-    });
-
-    closeIcon.addEventListener("click", () => {
+    const closePreview = () => {
         previewBox.classList.remove("show");
+        document.body.classList.remove("noscroll");
+    };
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => showPreview(index));
     });
+
+    closeBtn.addEventListener("click", closePreview);
 
     prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) {
-            preview(currentIndex - 1);
-        }
+        if (currentIndex > 0) showPreview(currentIndex - 1);
     });
 
     nextBtn.addEventListener("click", () => {
-        if (currentIndex < gallery.length - 1) {
-            preview(currentIndex + 1);
-        }
+        if (currentIndex < galleryItems.length - 1) showPreview(currentIndex + 1);
     });
 
+    // Gestione swipe touch
     previewBox.addEventListener("touchstart", (e) => {
-        if (e.touches.length > 1) {
-            isMultiTouch = true;
-        } else {
-            isMultiTouch = false;
+        isMultiTouch = e.touches.length > 1;
+        if (!isMultiTouch) {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
         }
@@ -74,22 +72,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const touchEndX = e.changedTouches[0].clientX;
         const touchEndY = e.changedTouches[0].clientY;
-        const distX = touchEndX - touchStartX;
-        const distY = touchEndY - touchStartY;
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
 
-        if (Math.abs(distX) > Math.abs(distY)) {
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
             // swipe orizzontale
-            if (Math.abs(distX) > swipeThreshold) {
-                if (distX > 0 && currentIndex > 0) {
-                    preview(currentIndex - 1);
-                } else if (distX < 0 && currentIndex < gallery.length - 1) {
-                    preview(currentIndex + 1);
+            if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+                if (deltaX > 0 && currentIndex > 0) {
+                    showPreview(currentIndex - 1);
+                } else if (deltaX < 0 && currentIndex < galleryItems.length - 1) {
+                    showPreview(currentIndex + 1);
                 }
             }
         } else {
-            // swipe verticale
-            if (distY < -verticalThreshold) {
-                previewBox.classList.remove("show"); // swipe verso l'alto
+            // swipe verso l’alto per chiudere
+            if (deltaY < -VERTICAL_THRESHOLD) {
+                closePreview();
             }
         }
     });

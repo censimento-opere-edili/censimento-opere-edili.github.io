@@ -217,3 +217,9 @@ body{
 .fullimg .next{
     right: 2vw;
 }
+.noscroll {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
