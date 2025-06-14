@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
           loader = document.querySelector(".loader");
 
     let currentIndex = 0;
+    let touchStartX = 0;
+    let isMultiTouch = false;  // Flag per rilevare pinch
+    const swipeThreshold = 100;
 
     function preview(index) {
         currentIndex = index;
@@ -53,14 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
             preview(currentIndex + 1);
         }
     });
-    let touchStartX = 0;
-    const swipeThreshold = 100;
 
     previewBox.addEventListener("touchstart", (e) => {
-        touchStartX = e.touches[0].clientX;
+        if (e.touches.length > 1) {
+            isMultiTouch = true; // Più dita = pinch attivo
+        } else {
+            isMultiTouch = false;
+            touchStartX = e.touches[0].clientX;
+        }
     });
 
     previewBox.addEventListener("touchend", (e) => {
+        if (isMultiTouch) return; // Ignora swipe se pinch attivo
+
         const touchEndX = e.changedTouches[0].clientX;
         const distance = touchEndX - touchStartX;
 
