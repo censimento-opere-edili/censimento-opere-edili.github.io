@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let touchStartX = 0;
     let touchStartY = 0;
     let isMultiTouch = false;
+    let scrollPosition = 0;
 
     const SWIPE_THRESHOLD = 100;
     const VERTICAL_THRESHOLD = 100;
@@ -35,13 +36,18 @@ document.addEventListener("DOMContentLoaded", () => {
         previewImg.src = largeSrc;
         caption.textContent = img.alt || "Immagine";
 
-        previewBox.classList.add("show");
+        // Blocca scroll mantenendo la posizione
+        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        document.body.style.top = `-${scrollPosition}px`;
         document.body.classList.add("noscroll");
+        previewBox.classList.add("show");
     };
 
     const closePreview = () => {
         previewBox.classList.remove("show");
         document.body.classList.remove("noscroll");
+        document.body.style.top = "";
+        window.scrollTo(0, scrollPosition);
     };
 
     galleryItems.forEach((item, index) => {
@@ -58,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentIndex < galleryItems.length - 1) showPreview(currentIndex + 1);
     });
 
-    // Gestione swipe touch
+    // Swipe touch
     previewBox.addEventListener("touchstart", (e) => {
         isMultiTouch = e.touches.length > 1;
         if (!isMultiTouch) {
@@ -76,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const deltaY = touchEndY - touchStartY;
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            // swipe orizzontale
             if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
                 if (deltaX > 0 && currentIndex > 0) {
                     showPreview(currentIndex - 1);
@@ -84,11 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     showPreview(currentIndex + 1);
                 }
             }
-        } else {
-            // swipe verso l’alto per chiudere
-            if (deltaY < -VERTICAL_THRESHOLD) {
-                closePreview();
-            }
+        } else if (deltaY < -VERTICAL_THRESHOLD) {
+            closePreview();
         }
     });
 });
