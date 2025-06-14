@@ -5,85 +5,71 @@ document.addEventListener("DOMContentLoaded", () => {
           closeIcon = document.querySelector(".fullimg .x"),
           captionText = document.getElementById("caption"),
           prevBtn = document.querySelector(".prev"),
-          nextBtn = document.querySelector(".next");
+          nextBtn = document.querySelector(".next"),
+          loader = document.querySelector(".loader");
 
     let currentIndex = 0;
-    let clickImgIndex = 0;
 
-   function preview(index) {
-  const selectedImg = gallery[index].querySelector("img");
-  const thumbSrc = selectedImg.src;
-  const largeSrc = thumbSrc.replace("/thumb/", "/large/");
-  
-  previewImg.classList.add("loading");
-  captionText.classList.add("loading");
-  document.querySelector(".loader").style.display = "block";
+    function preview(index) {
+        currentIndex = index;
 
-  previewImg.onload = () => {
-    previewImg.classList.remove("loading");
-    captionText.classList.remove("loading");
-    document.querySelector(".loader").style.display = "none";
-  };
+        const selectedImg = gallery[index].querySelector("img");
+        const thumbSrc = selectedImg.src;
+        const largeSrc = thumbSrc.replace("/thumb/", "/large/");
 
-  previewImg.src = largeSrc;
-  captionText.textContent = selectedImg.alt;
+        previewImg.classList.add("loading");
+        captionText.classList.add("loading");
+        loader.style.display = "block";
 
-  prevBtn.style.display = (index === 0) ? "none" : "block";
-  nextBtn.style.display = (index >= gallery.length - 1) ? "none" : "block";
-}
+        previewImg.onload = () => {
+            previewImg.classList.remove("loading");
+            captionText.classList.remove("loading");
+            loader.style.display = "none";
+        };
 
-    gallery.forEach((item, i) => {
-        item.onclick = () => {
-            currentIndex = i;
-            clickImgIndex = i;
-            preview(currentIndex);
-            previewBox.classList.add("show");
-        }
-    });
-
-    prevBtn.onclick = () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            preview(currentIndex);
-        }
-    };
-
-    nextBtn.onclick = () => {
-        if (currentIndex < gallery.length - 1) {
-            currentIndex++;
-            preview(currentIndex);
-        }
-    };
-
-    closeIcon.onclick = () => {
-        previewBox.classList.remove("show");
-        currentIndex = clickImgIndex; 
-    };
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    previewBox.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    previewBox.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleGesture();
-    });
-
-    function handleGesture() {
-        if (touchEndX < touchStartX - 40) {
-            if(currentIndex < gallery.length - 1) {
-                currentIndex++;
-                preview(currentIndex);
-            }
-        }
-        if (touchEndX > touchStartX + 40) {
-            if(currentIndex > 0) {
-                currentIndex--;
-                preview(currentIndex);
-            }
-        }
+        previewImg.src = largeSrc;
+        captionText.textContent = selectedImg.alt || "Immagine";
+        previewBox.classList.add("show");
     }
+
+    gallery.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            preview(index);
+        });
+    });
+
+    closeIcon.addEventListener("click", () => {
+        previewBox.classList.remove("show");
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            preview(currentIndex - 1);
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < gallery.length - 1) {
+            preview(currentIndex + 1);
+        }
+    });
+    let touchStartX = 0;
+    const swipeThreshold = 100;
+
+    previewBox.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    previewBox.addEventListener("touchend", (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const distance = touchEndX - touchStartX;
+
+        if (Math.abs(distance) > swipeThreshold) {
+            if (distance > 0 && currentIndex > 0) {
+                preview(currentIndex - 1); // swipe destra
+            } else if (distance < 0 && currentIndex < gallery.length - 1) {
+                preview(currentIndex + 1); // swipe sinistra
+            }
+        }
+    });
 });
