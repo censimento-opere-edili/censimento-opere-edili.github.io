@@ -28,67 +28,89 @@
         <div id="caption"></div>
     </div>
     <div class="griglia">
-            <div class="foto"><img src="fotografie2/101.webp" alt="#101 Faro alla Rupe del Canto"></div>
-            <div class="foto"><img src="fotografie2/102.webp" alt="#102 Terrazza a Idraulicità Sospesa"></div>
+            <div class="foto"><img src="fotografie2/thumb/101.webp" loading="lazy" alt="#101 Faro alla Rupe del Canto"></div>
+            <div class="foto"><img src="fotografie2/thumb/102.webp" loading="lazy" alt="#102 Terrazza a Idraulicità Sospesa"></div>
     </div>
     <script>
-        const gallery = document.querySelectorAll(".griglia .foto"),
-previewBox = document.querySelector(".fullimg"),
-previewImg = previewBox.querySelector("img"),
-closeIcon = document.querySelector("span");
-captionText = document.getElementById("caption");
+    document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.querySelectorAll(".griglia .foto"),
+          previewBox = document.querySelector(".fullimg"),
+          previewImg = previewBox.querySelector("img"),
+          closeIcon = document.querySelector(".fullimg .x"),
+          captionText = document.getElementById("caption"),
+          prevBtn = document.querySelector(".prev"),
+          nextBtn = document.querySelector(".next");
 
-window.onload = ()=>{
-    for (let i = 0; i < gallery.length; i++) {
-        let newIndex = i;
-        gallery[i].onclick = ()=>{
-            console.log(i);    
-            function preview(){
-                let selectedImgUrl = gallery[newIndex].querySelector("img").src;
-                let selectedImgAlt = gallery[newIndex].querySelector("img").alt;
-                console.log(selectedImgUrl);
-                previewImg.src = selectedImgUrl;
-                captionText.textContent = selectedImgAlt;
-            }
+    let currentIndex = 0;
+    let clickImgIndex = 0;
 
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
-                if(newIndex ==0){
-                    prevBtn.style.display="none";
-                }
-                if (newIndex >= gallery.lenght +1){
-                    nextBtn.style.display="none";
-                }
-            prevBtn.onclick = ()=>{
-                newIndex--;
-                if(newIndex == 0){
-                    preview();
-                    prevBtn.style.display = "none";
-                }else{
-                preview();
-                nextBtn.style.display="block";
-            }
-            }
-            nextBtn.onclick = ()=>{
-                newIndex++;
-                if(newIndex >= gallery.lenght +1){
-                    preview();
-                    nextBtn.style.display="none";
-                }else{
-                    preview();
-                    prevBtn.style.display="block";
-                }
-            }
-            preview();
+    function preview(index) {
+        const selectedImg = gallery[index].querySelector("img");
+        const thumbSrc = selectedImg.src; // es. fotografie/thumb/1.webp
+        const largeSrc = thumbSrc.replace("/thumb/", "/large/"); // cambio path
+
+        previewImg.src = largeSrc; // uso immagine grande
+        captionText.textContent = selectedImg.alt;
+
+        prevBtn.style.display = (index === 0) ? "none" : "block";
+        nextBtn.style.display = (index >= gallery.length - 1) ? "none" : "block";
+    }
+
+    gallery.forEach((item, i) => {
+        item.onclick = () => {
+            currentIndex = i;
+            clickImgIndex = i;
+            preview(currentIndex);
             previewBox.classList.add("show");
+        }
+    });
 
-            closeIcon.onclick = ()=>{
-                previewBox.classList.remove("show");
+    prevBtn.onclick = () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            preview(currentIndex);
+        }
+    };
+
+    nextBtn.onclick = () => {
+        if (currentIndex < gallery.length - 1) {
+            currentIndex++;
+            preview(currentIndex);
+        }
+    };
+
+    closeIcon.onclick = () => {
+        previewBox.classList.remove("show");
+        currentIndex = clickImgIndex; 
+    };
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    previewBox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    previewBox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+
+    function handleGesture() {
+        if (touchEndX < touchStartX - 40) {
+            if(currentIndex < gallery.length - 1) {
+                currentIndex++;
+                preview(currentIndex);
             }
         }
-       
+        if (touchEndX > touchStartX + 40) {
+            if(currentIndex > 0) {
+                currentIndex--;
+                preview(currentIndex);
+            }
+        }
     }
-}
-    </script>
+});
+</script>
 </body> 
 </html>
