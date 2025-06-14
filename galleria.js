@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentIndex = 0;
     let touchStartX = 0;
-    let isMultiTouch = false;  // Flag per rilevare pinch
+    let touchStartY = 0;
+    let isMultiTouch = false;
     const swipeThreshold = 100;
+    const verticalThreshold = 100;
 
     function preview(index) {
         currentIndex = index;
@@ -59,24 +61,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     previewBox.addEventListener("touchstart", (e) => {
         if (e.touches.length > 1) {
-            isMultiTouch = true; // Più dita = pinch attivo
+            isMultiTouch = true;
         } else {
             isMultiTouch = false;
             touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
         }
     });
 
     previewBox.addEventListener("touchend", (e) => {
-        if (isMultiTouch) return; // Ignora swipe se pinch attivo
+        if (isMultiTouch) return;
 
         const touchEndX = e.changedTouches[0].clientX;
-        const distance = touchEndX - touchStartX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const distX = touchEndX - touchStartX;
+        const distY = touchEndY - touchStartY;
 
-        if (Math.abs(distance) > swipeThreshold) {
-            if (distance > 0 && currentIndex > 0) {
-                preview(currentIndex - 1); // swipe destra
-            } else if (distance < 0 && currentIndex < gallery.length - 1) {
-                preview(currentIndex + 1); // swipe sinistra
+        if (Math.abs(distX) > Math.abs(distY)) {
+            // swipe orizzontale
+            if (Math.abs(distX) > swipeThreshold) {
+                if (distX > 0 && currentIndex > 0) {
+                    preview(currentIndex - 1);
+                } else if (distX < 0 && currentIndex < gallery.length - 1) {
+                    preview(currentIndex + 1);
+                }
+            }
+        } else {
+            // swipe verticale
+            if (distY < -verticalThreshold) {
+                previewBox.classList.remove("show"); // swipe verso l'alto
             }
         }
     });
