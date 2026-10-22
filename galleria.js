@@ -17,18 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let scrollPosition = 0;
 
-    // Indica se la galleria è attualmente aperta
     let galleryOpen = false;
 
     const SWIPE_THRESHOLD = 100;
     const VERTICAL_THRESHOLD = 100;
 
 
-    /*
-    ============================================================
-    APERTURA GALLERIA
-    ============================================================
-    */
+    
 
     const showPreview = (index) => {
 
@@ -39,11 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const largeSrc = img.src.replace("/thumb/", "/large/");
 
 
-        /*
-        --------------------------------------------------------
-        BLOCCO SCROLL
-        --------------------------------------------------------
-        */
+      
 
         if (!galleryOpen) {
 
@@ -57,11 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-        --------------------------------------------------------
-        CARICAMENTO IMMAGINE
-        --------------------------------------------------------
-        */
+      
 
         loader.style.display = "block";
 
@@ -83,25 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
         caption.textContent = img.alt || "Immagine";
 
 
-        /*
-        --------------------------------------------------------
-        APERTURA VISIVA
-        --------------------------------------------------------
-        */
 
         previewBox.classList.add("show");
 
 
-        /*
-        --------------------------------------------------------
-        HISTORY
-        --------------------------------------------------------
 
-        Aggiungiamo una sola entry quando la galleria
-        viene aperta.
-
-        Cambiare foto NON modifica la history.
-        */
 
         if (!galleryOpen) {
 
@@ -118,11 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /*
-    ============================================================
-    CHIUSURA VISIVA
-    ============================================================
-    */
+  
 
     const hidePreview = () => {
 
@@ -138,18 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /*
-    ============================================================
-    CHIUSURA GALLERIA
-    ============================================================
-
-    Questa funzione NON chiude direttamente la galleria.
-
-    Chiede al browser di tornare indietro nella history.
-
-    Il successivo "popstate" si occuperà della chiusura.
-    ============================================================
-    */
+    
 
     const closePreview = () => {
 
@@ -161,11 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /*
-    ============================================================
-    CLICK SULLE FOTO
-    ============================================================
-    */
+
 
     galleryItems.forEach((item, index) => {
 
@@ -178,11 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    PULSANTE X
-    ============================================================
-    */
 
     closeBtn.addEventListener("click", () => {
 
@@ -191,22 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    TASTO INDIETRO ANDROID / IPHONE / BROWSER
-    ============================================================
-
-    Quando l'utente preme il tasto Indietro:
-
-        history
-              ↓
-        popstate
-              ↓
-        chiudi galleria
-
-    NON richiamiamo history.back() qui.
-    ============================================================
-    */
+    
 
     window.addEventListener("popstate", () => {
 
@@ -219,11 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    FOTO PRECEDENTE
-    ============================================================
-    */
 
     prevBtn.addEventListener("click", () => {
 
@@ -236,11 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    FOTO SUCCESSIVA
-    ============================================================
-    */
+
 
     nextBtn.addEventListener("click", () => {
 
@@ -253,11 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    TOUCH START
-    ============================================================
-    */
+   
 
     previewBox.addEventListener("touchstart", (e) => {
 
@@ -273,11 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*
-    ============================================================
-    TOUCH END
-    ============================================================
-    */
+    
 
     previewBox.addEventListener("touchend", (e) => {
 
@@ -293,17 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const deltaY = touchEndY - touchStartY;
 
 
-        /*
-        --------------------------------------------------------
-        SWIPE ORIZZONTALE
-        --------------------------------------------------------
-        */
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
 
             if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
 
-                // Swipe verso destra
+                
                 if (
                     deltaX > 0 &&
                     currentIndex > 0
@@ -314,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
-                // Swipe verso sinistra
+              
                 else if (
                     deltaX < 0 &&
                     currentIndex < galleryItems.length - 1
@@ -329,11 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-        --------------------------------------------------------
-        SWIPE VERTICALE
-        --------------------------------------------------------
-        */
+      
 
         else if (deltaY < -VERTICAL_THRESHOLD) {
 
